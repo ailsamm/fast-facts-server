@@ -7,7 +7,7 @@ const jsonParser = express.json();
 
 // protects episode info against XSS attacks
 const serializeEpisode = episode => ({
-  episode_id: episode.id,
+  episode_id: episode.episode_id,
   episode_name: xss(episode.episode_name),
   date_created: episode.date_created,
   episode_questions: episode.episode_questions.map(q => [xss(q[0]), xss(q[1])]),
